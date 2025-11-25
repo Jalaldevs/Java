@@ -1,8 +1,7 @@
-package NotificationsProject.Student;
+package NotificationsProject.Notifications;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Map;
 
 public class Student {
 
@@ -17,12 +16,12 @@ public class Student {
     private String address;
     private String email;
     private String phone;
-    private LinkedList<String> notifications;
-    private ArrayList<Map<String, Double>> marks;
+    private LinkedList<Notification> notifications;
+    private ArrayList<Double> marks;
 
     // CONSTRUCTOR
 
-    public Student() {
+    public Student(int id, String dni, String nif, String name, String lastName, String location, String address, String email, String phone, LinkedList<Notification> notifications, ArrayList<Double> marks) {
         this.id = id;
         this.dni = dni;
         this.nif = nif;
@@ -36,8 +35,19 @@ public class Student {
         this.marks = marks;
     }
 
-    // GETTERS AND SETTERS
+    public Student(int id, String dni, String nif, String name, String lastName, String location, String address, String email, String phone) {
+        this.id = id;
+        this.dni = dni;
+        this.nif = nif;
+        this.name = name;
+        this.lastName = lastName;
+        this.location = location;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+    }
 
+    // GETTERS AND SETTERS
 
     public int getId() {
         return id;
@@ -99,19 +109,48 @@ public class Student {
         this.phone = phone;
     }
 
-    public LinkedList<String> getNotifications() {
+    public LinkedList<Notification> getNotifications() {
         return notifications;
     }
 
-    public void setNotifications(LinkedList<String> notifications) {
+    public void setNotifications(LinkedList<Notification> notifications) {
         this.notifications = notifications;
     }
 
-    public ArrayList<Map<String, Double>> getMarks() {
+    public ArrayList<Double> getMarks() {
         return marks;
     }
 
-    public void setMarks(ArrayList<Map<String, Double>> marks) {
+    public void setMarks(ArrayList<Double> marks) {
         this.marks = marks;
     }
+
+    // TO STRING
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", dni='" + dni + '\'' +
+                ", nif='" + nif + '\'' +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", location='" + location + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", notifications=" + notifications +
+                ", marks=" + marks +
+                '}';
+    }
+
+    // METHODS
+
+    public void receiveNotification (Notification notification) {
+        notifications.add(notification);
+    }
+
+
+
+
 }

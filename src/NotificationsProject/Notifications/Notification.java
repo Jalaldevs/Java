@@ -70,5 +70,7 @@ public class Notification {
                 ", hour='" + hour + '\'' +
                 '}';
     }
+
+
 }
 
