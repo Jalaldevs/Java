@@ -11,6 +11,15 @@ public class NotificationService {
 
     }
 
+    public static void examNotification(int id, String title, String desc, String date, String hour, String subject, String details, double mark) {
 
+        for (Student student : StudentRepository.estudiantesInstituto) {
+            ExamNotification notification = new ExamNotification(id, title, desc, date, hour, subject, details, mark);
+            student.receiveNotification(notification);
+        }
+
+
+
+    }
 
 }

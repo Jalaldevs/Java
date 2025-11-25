@@ -150,6 +150,17 @@ public class Student {
         notifications.add(notification);
     }
 
+    public double avaregeTotalMarks() {
+        double mark;
+        double total = 0.0;
+        double avarege;
+        for (int i = 0; i < this.marks.size(); i++) {
+            mark = this.marks.get(i);
+            total += mark;
+        }
+        avarege = total / this.marks.size();
+        return avarege;
+    }
 
 
 
