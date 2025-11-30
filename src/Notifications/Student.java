@@ -1,4 +1,4 @@
-package NotificationsProject.Notifications;
+package Notifications;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

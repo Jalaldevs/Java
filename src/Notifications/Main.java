@@ -1,4 +1,4 @@
-package NotificationsProject.Notifications;
+package Notifications;
 
 public class Main {
 
